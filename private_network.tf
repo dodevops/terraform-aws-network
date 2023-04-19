@@ -26,7 +26,7 @@ resource "aws_route_table" "private" {
 }
 
 resource "aws_route_table_association" "private" {
-  for_each       = aws_subnet
+  for_each       = aws_subnet.private_subnets
   route_table_id = aws_route_table.private.id
   subnet_id      = each.value["id"]
 }
@@ -77,7 +77,7 @@ resource "aws_vpc_endpoint" "interface_endpoints" {
   vpc_id             = aws_vpc.vpc.id
   vpc_endpoint_type  = "Interface"
   security_group_ids = [aws_security_group.allow.id]
-  subnet_ids         = aws_subnet.private_subnets[*].id
+  subnet_ids         = [for subnet in aws_subnet.private_subnets : subnet.id]
 }
 
 resource "aws_vpc_endpoint" "gateway_endpoints" {

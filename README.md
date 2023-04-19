@@ -142,33 +142,33 @@ The following outputs are exported:
 
 Description: ARN of the managed VPC
 
-### db\_security\_group\_ids
-
-Description: n/a
-
 ### id
 
 Description: ID of the managed VPC
 
 ### private\_subnet\_cidrs
 
-Description: n/a
+Description: CIDR blocks of the managed private subnets
 
 ### private\_subnet\_ids
 
-Description: n/a
+Description: IDs of the managed private subnets
 
 ### public\_subnet\_cidrs
 
-Description: n/a
+Description: CIDR blocks of the managed public subnets
 
 ### public\_subnet\_ids
 
-Description: n/a
+Description: IDs of the managed public subnets
+
+### security\_group\_id
+
+Description: The id of the managed security group
 
 ### vpce\_endpoint\_id\_s3
 
-Description: n/a
+Description: ID of the VPC gateway endpoint
 <!-- END_TF_DOCS -->
 
 ## Development
